@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { nanoid } from "nanoid";
+import { toast } from 'react-toastify';
 export default function TaskHookForm({kisiler, submitFn}) {
   const {register, handleSubmit, reset,  formState:{errors, isValid}}=useForm({defaultValues: {title:"", description:"", people:[]}, mode:"onChange"})
 
@@ -12,6 +13,7 @@ export default function TaskHookForm({kisiler, submitFn}) {
       status: "yapılacak",
     });
     reset();
+    toast("Yeni task tanımlandı")
   }
   return (
 
