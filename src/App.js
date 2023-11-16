@@ -20,7 +20,17 @@ function App() {
   }
 
   function handleComplete(id) {
+    const newTask = tasks.map((t) => {
+      if (t.id ==id) {
+        return {...t, status: "yapıldı"};
+
+      }
+      else {
+        return t;
+      }
+    })
     console.log("tamamlama fonksiyonunu buraya yazın")
+    setTasks(newTask);
   }
 
   return (
